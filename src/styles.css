@@ -1,0 +1,241 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Khaayaal — "Lavender Presence"
+ * Cream backgrounds, vivid lavender primary, soft peach accents,
+ * gradient purple hero moments. Inspired by Curely.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Brand tokens */
+  --color-cream: var(--cream);
+  --color-cream-warm: var(--cream-warm);
+  --color-lavender: var(--lavender);
+  --color-lavender-deep: var(--lavender-deep);
+  --color-lavender-soft: var(--lavender-soft);
+  --color-peach: var(--peach);
+  --color-peach-soft: var(--peach-soft);
+  --color-mint: var(--mint);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-hairline: var(--hairline);
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+:root {
+  --radius: 1rem;
+
+  /* Khaayaal — Trust Blue + Wellness Green + Terracotta warmth */
+  --cream: oklch(0.975 0.008 78);          /* warm off-white body */
+  --cream-warm: oklch(0.955 0.015 68);     /* warmer hero paper */
+  --peach: oklch(0.68 0.145 38);           /* terracotta/coral accent */
+  --peach-soft: oklch(0.94 0.038 45);      /* pale warm blush */
+  --lavender: oklch(0.48 0.115 258);       /* trust blue #0C447C-ish */
+  --lavender-deep: oklch(0.34 0.11 258);   /* deep trust navy */
+  --lavender-soft: oklch(0.955 0.022 245); /* pale blue tint bg */
+  --mint: oklch(0.66 0.125 165);           /* wellness green #1D9E75 */
+  --ink: oklch(0.22 0.028 255);            /* slate dark */
+  --ink-muted: oklch(0.22 0.028 255 / 0.62);
+  --hairline: oklch(0.18 0.02 285 / 0.08);
+
+  /* shadcn */
+  --background: var(--cream);
+  --foreground: var(--ink);
+  --card: oklch(1 0 0);
+  --card-foreground: var(--ink);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--ink);
+  --primary: var(--lavender);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: var(--lavender-soft);
+  --secondary-foreground: var(--ink);
+  --muted: oklch(0.96 0.01 60);
+  --muted-foreground: var(--ink-muted);
+  --accent: var(--peach);
+  --accent-foreground: var(--ink);
+  --destructive: oklch(0.6 0.22 20);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: var(--hairline);
+  --input: var(--hairline);
+  --ring: var(--lavender);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+/* ─────────  ANIMATIONS  ───────── */
+@keyframes mj-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+@keyframes mj-float-slow {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-8px) rotate(-2deg); }
+}
+@keyframes mj-pulse-ring {
+  0% { transform: scale(0.8); opacity: 0.7; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+@keyframes mj-shuffle {
+  0%,   28% { transform: translateX(0) scale(1);        opacity: 1;    z-index: 30; }
+  33%,  61% { transform: translateX(115%) scale(0.85);  opacity: 0.5;  z-index: 20; }
+  66%,  94% { transform: translateX(-115%) scale(0.85); opacity: 0.5;  z-index: 10; }
+  100%      { transform: translateX(0) scale(1);        opacity: 1;    z-index: 30; }
+}
+@keyframes mj-fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes mj-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes mj-spin-slow {
+  from { transform: rotate(0); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes mj-blob {
+  0%, 100% { border-radius: 42% 58% 63% 37% / 44% 55% 45% 56%; }
+  50%      { border-radius: 62% 38% 40% 60% / 55% 45% 55% 45%; }
+}
+@keyframes mj-shine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+/* Cartoon primitives */
+@keyframes mj-wiggle { 0%,100% { transform: rotate(-4deg); } 50% { transform: rotate(4deg); } }
+@keyframes mj-bob    { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+@keyframes mj-bob-lg { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@keyframes mj-spin   { to { transform: rotate(360deg); } }
+@keyframes mj-dash   { to { stroke-dashoffset: -40; } }
+@keyframes mj-wave   { 0%,100% { transform: rotate(-18deg); } 50% { transform: rotate(20deg); } }
+@keyframes mj-scoot  { 0% { transform: translateX(-8%); } 100% { transform: translateX(8%); } }
+@keyframes mj-pop    { 0% { transform: scale(0.6); opacity: 0; } 60% { transform: scale(1.05); opacity: 1; } 100% { transform: scale(1); opacity: 1; } }
+@keyframes mj-panel  { 0% { opacity: 0; transform: translateY(12px) scale(0.98); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes mj-blink  { 0%,92%,100% { transform: scaleY(1); } 96% { transform: scaleY(0.1); } }
+@keyframes mj-tick   { 0%,100% { transform: translateX(0); } 50% { transform: translateX(-24px); } }
+@keyframes mj-pedal  { to { transform: rotate(360deg); } }
+
+.mj-float        { animation: mj-float 6s ease-in-out infinite; }
+.mj-float-slow   { animation: mj-float-slow 8s ease-in-out infinite 1s; }
+.mj-shuffle      { animation: mj-shuffle 12s cubic-bezier(0.65, 0, 0.35, 1) infinite; }
+.mj-shuffle-1    { animation: mj-shuffle 12s cubic-bezier(0.65, 0, 0.35, 1) infinite -4s; }
+.mj-shuffle-2    { animation: mj-shuffle 12s cubic-bezier(0.65, 0, 0.35, 1) infinite -8s; }
+.mj-fade-up      { animation: mj-fade-up 0.7s ease-out both; }
+.mj-marquee      { animation: mj-marquee 30s linear infinite; }
+.mj-spin-slow    { animation: mj-spin-slow 20s linear infinite; }
+.mj-blob         { animation: mj-blob 12s ease-in-out infinite; }
+.mj-wiggle       { animation: mj-wiggle 1.6s ease-in-out infinite; transform-origin: bottom center; }
+.mj-wiggle-fast  { animation: mj-wiggle 0.5s ease-in-out infinite; transform-origin: bottom center; }
+.mj-cartoon-bob  { animation: mj-bob 1.2s ease-in-out infinite; }
+.mj-cartoon-bob-lg { animation: mj-bob-lg 1.4s ease-in-out infinite; }
+.mj-spin         { animation: mj-spin 0.55s linear infinite; transform-origin: center; transform-box: fill-box; }
+.mj-wave-arm     { animation: mj-wave 0.9s ease-in-out infinite; transform-origin: top center; }
+.mj-scoot        { animation: mj-scoot 1.4s ease-in-out infinite alternate; }
+.mj-pop          { animation: mj-pop 0.5s cubic-bezier(0.34,1.56,0.64,1) both; }
+.mj-panel        { animation: mj-panel 0.7s cubic-bezier(0.22,1,0.36,1) both; }
+.mj-tick         { animation: mj-tick 1.2s ease-in-out infinite; }
+
+.mj-pulse-ring::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: currentColor;
+  animation: mj-pulse-ring 2.4s ease-out infinite;
+}
+
+/* Backgrounds */
+.mj-grid-bg {
+  background-image:
+    linear-gradient(to right, oklch(0.18 0.02 285 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(0.18 0.02 285 / 0.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+.mj-noise {
+  background-image: radial-gradient(oklch(0.18 0.02 285 / 0.1) 1px, transparent 1px);
+  background-size: 8px 8px;
+}
+.mj-hero-gradient {
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 0%, oklch(0.955 0.022 245 / 0.95), transparent 70%),
+    radial-gradient(ellipse 80% 40% at 100% 30%, oklch(0.94 0.038 45 / 0.6), transparent 60%),
+    linear-gradient(to bottom, var(--cream-warm), var(--cream));
+}
+.mj-lav-gradient {
+  background: linear-gradient(135deg, oklch(0.48 0.115 258), oklch(0.30 0.10 258));
+}
+.mj-green-gradient {
+  background: linear-gradient(135deg, oklch(0.68 0.13 165), oklch(0.52 0.12 168));
+}
+.mj-card-shine {
+  position: relative;
+  overflow: hidden;
+}
+.mj-card-shine::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, oklch(1 0 0 / 0.35), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.8s;
+}
+.mj-card-shine:hover::before {
+  animation: mj-shine 1.2s ease-in-out;
+}
+
+/* Ticker */
+.mj-hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.mj-hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -20px oklch(0.55 0.18 295 / 0.3);
+}
