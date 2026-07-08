@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Pill, Package, Bike, HeartPulse, Stethoscope, Clock, Home, Smile } from "lucide-react";
 
 /**
- * MedicineDelivery — a comic-book story of the WHOLE service, not just delivery.
+ * MedicineDelivery - a comic-book story of the WHOLE service, not just delivery.
  * A continuous emotional arc: son abroad worries → medicine ordered → packed →
  * rider delivers → nurse feeds Ammi → hospital escort → nurse waits in the long
  * queue so family doesn't have to → Ammi rests happy with nurse → son abroad
@@ -10,12 +10,12 @@ import { Pill, Package, Bike, HeartPulse, Stethoscope, Clock, Home, Smile } from
  */
 
 const BEATS = [
-  { key: "order",    label: "You order",       icon: Pill,         hint: "Tap from London — 4am worries eased." },
+  { key: "order",    label: "You order",       icon: Pill,         hint: "Tap from London - 4am worries eased." },
   { key: "pack",     label: "Pharmacy packs",  icon: Package,      hint: "Verified pharmacy in Lahore seals it." },
   { key: "ride",     label: "Rider en route",  icon: Bike,         hint: "Live GPS across the city." },
   { key: "feed",     label: "Nurse feeds Ammi",icon: HeartPulse,   hint: "Medicine given, meal warmed, dua whispered." },
-  { key: "hospital", label: "Hospital escort", icon: Stethoscope,  hint: "Doctor's appointment — nurse holds her hand." },
-  { key: "queue",    label: "Waiting in line", icon: Clock,        hint: "Two hours in the utility queue — you don't." },
+  { key: "hospital", label: "Hospital escort", icon: Stethoscope,  hint: "Doctor's appointment - nurse holds her hand." },
+  { key: "queue",    label: "Waiting in line", icon: Clock,        hint: "Two hours in the utility queue - you don't." },
   { key: "resting",  label: "Ammi at ease",    icon: Home,         hint: "Home safe. Nurse at her bedside." },
   { key: "proof",    label: "You exhale",      icon: Smile,        hint: "Photo proof lands. Tears. Relief." },
 ] as const;
@@ -52,7 +52,7 @@ export function MedicineDelivery({ compact = false }: { compact?: boolean }) {
               </span>
             </h2>
             <p className="mt-5 text-base text-ink-muted leading-relaxed">
-              Follow the story — from your 4am worry in London, through the pharmacy
+              Follow the story - from your 4am worry in London, through the pharmacy
               and the rider, into Ammi's room with her nurse, the hospital escort,
               the long utility queue you never had to stand in, and the photograph
               that finally lets you breathe.
@@ -180,7 +180,7 @@ const PANTS = "oklch(0.32 0.04 260)";
 const SHOE = "oklch(0.20 0.02 260)";
 
 /**
- * CartoonPerson (exported as StickPerson for drop-in compatibility) —
+ * CartoonPerson (exported as StickPerson for drop-in compatibility) -
  * a rounded, chibi-style character with filled body, shirt, pants, shoes.
  */
 function StickPerson({
@@ -199,7 +199,7 @@ function StickPerson({
       <ellipse cx="-5" cy="17" rx="5" ry="2.2" fill={SHOE} stroke={INK} strokeWidth="1.2" />
       <ellipse cx="5"  cy="17" rx="5" ry="2.2" fill={SHOE} stroke={INK} strokeWidth="1.2" />
 
-      {/* torso / shirt — rounded */}
+      {/* torso / shirt - rounded */}
       <path d="M -10 -22 Q -11 -6 -8 -2 L 8 -2 Q 11 -6 10 -22 Q 6 -25 0 -25 Q -6 -25 -10 -22 Z"
             fill={shirt} stroke={INK} strokeWidth="1.6" strokeLinejoin="round" />
       <path d="M -4 -24 Q 0 -20 4 -24" fill="none" stroke={INK} strokeWidth="1.2" strokeLinecap="round" />
@@ -347,7 +347,7 @@ function PanelPack() {
           <path d="M 250 178 L 258 178 L 260 194 L 240 194 L 242 178 Z" fill="white" stroke={INK} strokeWidth="1.2" transform="translate(0 -1)"/>
         </g>
 
-        {/* package being packed — bouncing in */}
+        {/* package being packed - bouncing in */}
         <g className="mj-pop" style={{ animationDelay: "0.2s", transformOrigin: "360px 200px" }}>
           <rect x="335" y="188" width="55" height="34" rx="3" fill={PEACH} stroke={INK} strokeWidth="1.8" />
           <line x1="335" y1="205" x2="390" y2="205" stroke={INK} strokeWidth="1.2" />
@@ -406,7 +406,7 @@ function PanelRide() {
               style={{ animation: "mj-dash 0.6s linear infinite" }} />
       </svg>
 
-      {/* Rider on a bicycle — center stage, wheels spinning, legs pedaling */}
+      {/* Rider on a bicycle - center stage, wheels spinning, legs pedaling */}
       <div className="absolute left-1/2 -translate-x-1/2 bottom-[13%] mj-cartoon-bob-lg">
         <svg width="240" height="170" viewBox="0 0 240 170">
           {/* motion lines */}
@@ -481,9 +481,9 @@ function PanelRide() {
             />
           </g>
 
-          {/* Rider — filled body, leaning forward on the bike, face turned toward the front (right) */}
+          {/* Rider - filled body, leaning forward on the bike, face turned toward the front (right) */}
           <g>
-            {/* Back leg — static bent path from hip to crank, small bob to fake pedaling */}
+            {/* Back leg - static bent path from hip to crank, small bob to fake pedaling */}
             <g>
               <path d="M 110 88 Q 104 112 122 132"
                     fill="none" stroke={PANTS} strokeWidth="7" strokeLinecap="round" />
@@ -494,14 +494,14 @@ function PanelRide() {
                                 dur="0.9s" repeatCount="indefinite" />
             </g>
 
-            {/* Torso — jacket, leaning forward from hip (110,88) to shoulder (140,68) */}
+            {/* Torso - jacket, leaning forward from hip (110,88) to shoulder (140,68) */}
             <path d="M 108 92 Q 104 78 132 62 Q 146 60 148 72 Q 146 82 132 86 Q 122 92 118 96 Z"
                   fill={LAV} stroke={INK} strokeWidth="1.8" strokeLinejoin="round" />
             <path d="M 118 74 Q 128 74 138 70" stroke={INK} strokeWidth="1" fill="none" opacity="0.5" />
 
             <path d="M 132 62 Q 122 68 118 82" stroke={INK} strokeWidth="2" fill="none" strokeLinecap="round" opacity="0.55" />
 
-            {/* Head — positioned forward of the shoulder, facing right */}
+            {/* Head - positioned forward of the shoulder, facing right */}
             <g>
               {/* Neck attaching behind the head */}
               <path d="M 132 62 L 138 54" stroke={PEACH} strokeWidth="5" strokeLinecap="round" />
@@ -510,7 +510,7 @@ function PanelRide() {
               {/* Head base, facing right */}
               <ellipse cx="146" cy="48" rx="10" ry="11" fill={PEACH} stroke={INK} strokeWidth="1.6" />
 
-              {/* Helmet — rounded toward the front/right */}
+              {/* Helmet - rounded toward the front/right */}
               <path d="M 136 46 Q 142 32 156 40 Q 158 44 156 48 Q 150 52 138 50 Q 134 50 136 46 Z"
                     fill={LAV} stroke={INK} strokeWidth="1.8" strokeLinejoin="round" />
               {/* Helmet vents */}
@@ -518,7 +518,7 @@ function PanelRide() {
               <line x1="146" y1="38" x2="146" y2="46" stroke={INK} strokeWidth="1" opacity="0.6" />
               <line x1="150" y1="40" x2="150" y2="46" stroke={INK} strokeWidth="1" opacity="0.6" />
 
-              {/* Face features — looking right */}
+              {/* Face features - looking right */}
               <ellipse cx="150" cy="46" rx="1.4" ry="1.6" fill={INK} />
               <circle cx="151" cy="45" r="0.5" fill="white" />
               <path d="M 144 52 Q 150 58 156 52" stroke={INK} strokeWidth="1.2" fill="none" strokeLinecap="round" />
@@ -530,7 +530,7 @@ function PanelRide() {
             <path d="M 140 68 Q 158 68 170 78" stroke={INK} strokeWidth="1.4" fill="none" strokeLinecap="round" />
             <circle cx="172" cy="78" r="3.2" fill={INK} />
 
-            {/* Front leg — opposite phase bob */}
+            {/* Front leg - opposite phase bob */}
             <g>
               <path d="M 110 88 Q 118 112 122 132"
                     fill="none" stroke={PANTS} strokeWidth="7" strokeLinecap="round" />
@@ -548,7 +548,7 @@ function PanelRide() {
         </svg>
       </div>
 
-      <Caption text="Rider zooms through Lahore — GPS live on your phone." />
+      <Caption text="Rider zooms through Lahore - GPS live on your phone." />
     </div>
   );
 }
@@ -662,7 +662,7 @@ function PanelFeed() {
           <path d="M 160 232 L 370 232" stroke={INK} strokeWidth="1" opacity="0.4" />
         </g>
 
-        {/* Ammi lying — head on pillow, smiling */}
+        {/* Ammi lying - head on pillow, smiling */}
         <g>
           {/* body under blanket (bump) */}
           <path d="M 170 216 Q 260 198 360 214 L 360 224 Q 260 210 170 226 Z"
@@ -680,7 +680,7 @@ function PanelFeed() {
           <circle cx="129" cy="200" r="1.4" fill={PEACH} opacity="0.6" />
         </g>
 
-        {/* Nurse kneeling beside — spoon-feeding / holding cup with pills */}
+        {/* Nurse kneeling beside - spoon-feeding / holding cup with pills */}
         <g transform="translate(220 118)">
           {/* nurse legs kneeling */}
           <path d="M -6 132 Q -8 152 6 152 L 26 152 L 26 140 Q 8 138 6 132 Z"
@@ -740,7 +740,7 @@ function PanelFeed() {
   );
 }
 
-/* ───── Panel 5: Hospital escort — nurse walks Ammi in ───── */
+/* ───── Panel 5: Hospital escort - nurse walks Ammi in ───── */
 function PanelHospital() {
   return (
     <div className="relative h-full w-full mj-panel">
@@ -794,7 +794,7 @@ function PanelHospital() {
             <ellipse cx="-2.5" cy="-40" rx="1" ry="1.2" fill={INK} />
             <ellipse cx="2.5" cy="-40" rx="1" ry="1.2" fill={INK} />
             <path d="M -2 -35 Q 0 -33 2 -35" stroke={INK} strokeWidth="1.1" fill="none" strokeLinecap="round" />
-            {/* held arm (right) — reaches to nurse */}
+            {/* held arm (right) - reaches to nurse */}
             <path d="M 10 -28 Q 20 -22 26 -14" stroke="oklch(0.92 0.03 60)" strokeWidth="5" fill="none" strokeLinecap="round" />
             <path d="M 10 -28 Q 20 -22 26 -14" stroke={INK} strokeWidth="1.2" fill="none" strokeLinecap="round" />
             {/* cane */}
@@ -837,7 +837,7 @@ function PanelHospital() {
         </g>
       </svg>
 
-      <Caption text="Hospital appointment — a nurse holds her hand the whole way." />
+      <Caption text="Hospital appointment - a nurse holds her hand the whole way." />
     </div>
   );
 }
@@ -931,7 +931,7 @@ function PanelQueue() {
             </marker>
           </defs>
           <rect x="140" y="100" width="140" height="34" rx="4" fill="white" stroke={INK} strokeWidth="1.6" />
-          <text x="210" y="118" textAnchor="middle" fill={INK} fontSize="10" fontWeight="900" fontFamily="system-ui">Your nurse — hour 2.</text>
+          <text x="210" y="118" textAnchor="middle" fill={INK} fontSize="10" fontWeight="900" fontFamily="system-ui">Your nurse - hour 2.</text>
           <text x="210" y="130" textAnchor="middle" fill={LAV} fontSize="10" fontWeight="800" fontFamily="system-ui">You: still in a meeting.</text>
         </g>
 
@@ -944,12 +944,12 @@ function PanelQueue() {
         </g>
       </svg>
 
-      <Caption text="Bills, queues, forms — your nurse handles them. You don't." />
+      <Caption text="Bills, queues, forms - your nurse handles them. You don't." />
     </div>
   );
 }
 
-/* ───── Panel 7: Ammi at ease at home — nurse at bedside ───── */
+/* ───── Panel 7: Ammi at ease at home - nurse at bedside ───── */
 function PanelResting() {
   return (
     <div className="relative h-full w-full mj-panel">
@@ -1050,7 +1050,7 @@ function PanelResting() {
   );
 }
 
-/* ───── Panel 8: You exhale — son abroad sees the photo proof ───── */
+/* ───── Panel 8: You exhale - son abroad sees the photo proof ───── */
 function PanelProof() {
   return (
     <div className="relative h-full w-full mj-panel">
@@ -1085,7 +1085,7 @@ function PanelProof() {
           {/* head */}
           <ellipse cx="-4" cy="10" rx="16" ry="17" fill="oklch(0.75 0.08 40)" stroke={INK} strokeWidth="1.6" />
           <path d="M -18 4 Q -4 -12 12 4 Q 14 10 10 12 Q -4 6 -18 12 Q -20 10 -18 4 Z" fill={HAIR} stroke={INK} strokeWidth="1.2" />
-          {/* eyes — closed smile of relief */}
+          {/* eyes - closed smile of relief */}
           <path d="M -10 10 Q -7 13 -4 10" stroke={INK} strokeWidth="1.5" fill="none" strokeLinecap="round" />
           <path d="M 0 10 Q 3 13 6 10" stroke={INK} strokeWidth="1.5" fill="none" strokeLinecap="round" />
           {/* tear */}
@@ -1116,7 +1116,7 @@ function PanelProof() {
           <ellipse cx="-1" cy="86" rx="60" ry="30" fill="oklch(0.94 0.05 60)" opacity="0.18" />
         </g>
 
-        {/* Speech / thought bubble — relief */}
+        {/* Speech / thought bubble - relief */}
         <g className="mj-pop" style={{ animationDelay: "0.5s" }}>
           <path d="M 30 60 Q 30 44 46 44 L 170 44 Q 186 44 186 60 L 186 92 Q 186 108 170 108 L 100 108 L 84 118 L 90 108 L 46 108 Q 30 108 30 92 Z"
                 fill="white" stroke={INK} strokeWidth="1.8" />

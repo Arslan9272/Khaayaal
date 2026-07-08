@@ -92,7 +92,7 @@ export function Scene3D({
         <div className="absolute inset-0 mj-noise opacity-30" />
       </div>
 
-      {/* Poster fallback — lightweight static image shown while canvas loads */}
+      {/* Poster fallback - lightweight static image shown while canvas loads */}
       <div
         aria-hidden={ready}
         className={cn(

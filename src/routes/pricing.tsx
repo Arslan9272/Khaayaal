@@ -6,13 +6,13 @@ import { PageHero, Scene3DBand } from "@/components/mojood/shared";
 export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
-      { title: "Pricing — Khaayaal tiers for every level of care" },
+      { title: "Pricing - Khaayaal tiers for every level of care" },
       {
         name: "description",
         content:
-          "From $149 concierge to $2,000 24/7 sanctuary. Start small, grow into full clinical care as your parents' needs evolve.",
+          "From $300 concierge care to a bespoke 24/7 live-in sanctuary. Start small, grow into full clinical care as your parents' needs evolve.",
       },
-      { property: "og:title", content: "Pricing — Khaayaal" },
+      { property: "og:title", content: "Pricing - Khaayaal" },
       { property: "og:description", content: "Four tiers. USD billing. Transparent pricing." },
     ],
   }),
@@ -23,8 +23,9 @@ const TIERS = [
   {
     n: "Concierge",
     tag: "Wedge",
-    price: { monthly: 149, annual: 129 },
-    d: "Errands, bills, hospital escort. One dedicated agent — WhatsApp-first.",
+    price: { monthly: 300, annual: 255 },
+    quote: false,
+    d: "Errands, bills, hospital escort. One dedicated agent - WhatsApp-first.",
     features: [
       "1 dedicated agent",
       "Bills & documents management",
@@ -39,7 +40,8 @@ const TIERS = [
   {
     n: "Assurance",
     tag: "Essential",
-    price: { monthly: 1000, annual: 850 },
+    price: { monthly: 350, annual: 298 },
+    quote: false,
     d: "Regular skilled visits, medicine oversight, and the full transparency layer.",
     features: [
       "2 weekly nurse visits",
@@ -55,7 +57,8 @@ const TIERS = [
   {
     n: "Guardian",
     tag: "Most popular",
-    price: { monthly: 1500, annual: 1275 },
+    price: { monthly: 475, annual: 404 },
+    quote: false,
     d: "Daily presence, physio, doctor sync, priority emergency response.",
     features: [
       "Daily nurse attendant",
@@ -72,8 +75,9 @@ const TIERS = [
   {
     n: "Sanctuary",
     tag: "Live-in",
-    price: { monthly: 2000, annual: 1700 },
-    d: "24/7 live-in care with weekly clinician oversight and quarterly labs.",
+    price: { monthly: 0, annual: 0 },
+    quote: true,
+    d: "24/7 live-in care with weekly clinician oversight and quarterly labs. Priced to your family's exact needs.",
     features: [
       "24/7 live-in attendant",
       "Weekly MD oversight",
@@ -82,7 +86,7 @@ const TIERS = [
       "Priority ambulance",
       "White-glove onboarding",
     ],
-    cta: "Talk to us",
+    cta: "Contact directly",
     highlight: false,
   },
 ] as const;
@@ -102,7 +106,7 @@ function Pricing() {
         eyebrow="Pricing"
         title="Start small."
         italicTail="Grow into full care."
-        subtitle="Paid in USD from abroad, delivered in rupees in Lahore. Cancel anytime — no long contracts."
+        subtitle="Paid in USD from abroad, delivered in rupees in Lahore. Cancel anytime - no long contracts."
       >
         <div className="inline-flex items-center gap-2 rounded-full bg-white/70 backdrop-blur p-1 ring-1 ring-hairline">
           <button
@@ -126,7 +130,7 @@ function Pricing() {
             <span className="font-mono text-[10px] font-bold uppercase tracking-[0.25em] text-lavender-deep">
               Auto-touring
             </span>
-            <span className="font-mono text-[10px] text-ink-muted">— spotlight moves through each tier · hover to pause</span>
+            <span className="font-mono text-[10px] text-ink-muted">- spotlight moves through each tier · hover to pause</span>
           </div>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {TIERS.map((t, i) => {
@@ -161,14 +165,20 @@ function Pricing() {
                   </p>
                   <h3 className="text-2xl font-bold">{t.n}</h3>
                   <div className="mt-5 mb-1 flex items-baseline gap-1">
-                    <span className="text-4xl font-extrabold">
-                      ${annual ? t.price.annual : t.price.monthly}
-                    </span>
-                    <span className={`text-sm ${t.highlight ? "text-white/60" : "text-ink-muted"}`}>
-                      /mo
-                    </span>
+                    {t.quote ? (
+                      <span className="text-3xl font-extrabold leading-tight">Contact for quote</span>
+                    ) : (
+                      <>
+                        <span className="text-4xl font-extrabold">
+                          ${annual ? t.price.annual : t.price.monthly}
+                        </span>
+                        <span className={`text-sm ${t.highlight ? "text-white/60" : "text-ink-muted"}`}>
+                          /mo
+                        </span>
+                      </>
+                    )}
                   </div>
-                  {annual && (
+                  {annual && !t.quote && (
                     <p className={`text-[10px] font-mono ${t.highlight ? "text-peach-soft" : "text-lavender-deep"}`}>
                       Billed annually
                     </p>
@@ -222,9 +232,8 @@ function Pricing() {
 
       <Scene3DBand
         variant="coins"
-        eyebrow="Interactive · 3D"
-        title="Tiers, stacked in the round."
-        body="Spin the stack — Concierge to Sanctuary. Bigger discs mean more visits, closer eyes, deeper cover."
+        title="Tiers, stacked with care."
+        body="Concierge to Sanctuary - each layer adds more visits, closer eyes, and deeper cover as your parents' needs grow."
         reverse
       />
       <AddOns />
@@ -279,7 +288,7 @@ function AddOns() {
 function PriceFaq() {
   const faq = [
     { q: "How is payment handled?", a: "You pay in USD, GBP, or EUR by card or wire. We handle FX and pay Lahore staff in rupees." },
-    { q: "Can I switch tiers?", a: "Yes — upgrade or downgrade any time from the app. Prorated on the same billing cycle." },
+    { q: "Can I switch tiers?", a: "Yes - upgrade or downgrade any time from the app. Prorated on the same billing cycle." },
     { q: "Is there a setup fee?", a: "No. The first onboarding call is free and there are no long-term contracts." },
     { q: "What if my parents don't need it every day?", a: "Start with Concierge or Assurance. Add ad-hoc visits from the wallet as needed." },
     { q: "Do you cover other cities?", a: "Pilot is Lahore-only. Karachi and Islamabad are on the 2026 roadmap." },

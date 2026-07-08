@@ -23,7 +23,7 @@ import { MedicineDelivery } from "@/components/mojood/medicine-delivery";
 export const Route = createFileRoute("/how-it-works")({
   head: () => ({
     meta: [
-      { title: "How Khaayaal works — from booking to photo-proof" },
+      { title: "How Khaayaal works - from booking to photo-proof" },
       {
         name: "description",
         content:
@@ -43,13 +43,13 @@ function HowItWorks() {
         eyebrow="From booking to proof"
         title="Six steps between"
         italicTail="your worry and their care."
-        subtitle="Every visit follows the same rhythm — designed so nothing important is left to memory, and every family member gets the same view."
+        subtitle="Every visit follows the same rhythm - designed so nothing important is left to memory, and every family member gets the same view."
       />
       <StepsGrid />
       <Scene3DBand
         variant="route"
         title="Every visit, on rails."
-        body="A live orbit around your parent's care — nurse dispatched, ETA ticking, arrival stamped. Rotate the loop to see each waypoint."
+        body="Nurse dispatched, ETA ticking, arrival stamped - watch each visit travel from booked to done, every single time."
       />
       <MedicineDelivery compact />
       <TimelineDetail />
@@ -66,7 +66,7 @@ function StepsGrid() {
     { i: <Bell className="size-5" />, n: "02", t: "Confirm", d: "Ops confirms the nurse in minutes. The family gets a scheduled reminder." },
     { i: <MapPin className="size-5" />, n: "03", t: "Track", d: "Nurse appears on your live map en route. GPS check-in fires the moment they arrive." },
     { i: <ClipboardCheck className="size-5" />, n: "04", t: "Visit", d: "Every task in the care plan is executed against completion protocols with evidence." },
-    { i: <Camera className="size-5" />, n: "05", t: "Photo proof", d: "Medicine intake, vitals, meals — each captured and uploaded on the spot." },
+    { i: <Camera className="size-5" />, n: "05", t: "Photo proof", d: "Medicine intake, vitals, meals - each captured and uploaded on the spot." },
     { i: <FileText className="size-5" />, n: "06", t: "Report", d: "Full session summary compiled and pushed to your Care Circle. Wallet reconciled." },
   ];
   return (
@@ -109,7 +109,7 @@ function StepsGrid() {
 function TimelineDetail() {
   const items = [
     { t: "09:32", h: "Booking created", d: "You add a Tuesday visit for Ammi and note she's low on her BP medication." },
-    { t: "09:34", h: "Nurse confirmed", d: "Zoya — 8 years RN — accepts. The visit lands on your Care Circle timeline." },
+    { t: "09:34", h: "Nurse confirmed", d: "Zoya - 8 years RN - accepts. The visit lands on your Care Circle timeline." },
     { t: "15:41", h: "En route", d: "Zoya's dot begins moving from her last visit. ETA updates live on your map." },
     { t: "16:00", h: "Geofenced check-in", d: "GPS fence at the house triggers automatically. You get a push notification." },
     { t: "16:07", h: "Medicine photo #1", d: "Amlodipine 5mg, taken with water. Photo, timestamp, and vitals attached." },
@@ -130,7 +130,7 @@ function TimelineDetail() {
               </span>
             </h2>
             <p className="mt-6 text-ink-muted">
-              This is what a real visit looks like from your side of the world — every event
+              This is what a real visit looks like from your side of the world - every event
               logged, every action photographed.
             </p>
             <Link
@@ -174,7 +174,7 @@ function PhoneShowcase() {
     { s: <ScreenTrack />, t: "Watch them arrive", d: "Live map + ETA + geofenced check-in. No manual updates required." },
     { s: <ScreenMeds />, t: "Every medicine, timed", d: "Schedule, photo of intake, and missed-dose escalation to your Care Circle." },
     { s: <ScreenReport />, t: "The full report", d: "Vitals, photos, and a personal note pushed to everyone in seconds." },
-    { s: <ScreenCircle />, t: "Family stays in sync", d: "Siblings in Dubai, London, and Toronto — one shared thread." },
+    { s: <ScreenCircle />, t: "Family stays in sync", d: "Siblings in Dubai, London, and Toronto - one shared thread." },
   ];
   return (
     <section className="py-24 md:py-32">
@@ -210,7 +210,7 @@ function PhoneShowcase() {
 
 function FaqQuick() {
   const faq = [
-    { q: "Do I pay in USD?", a: "Yes. Subscriptions charge in USD, GBP, or EUR — care is delivered in rupees in Lahore." },
+    { q: "Do I pay in USD?", a: "Yes. Subscriptions charge in USD, GBP, or EUR - care is delivered in rupees in Lahore." },
     { q: "Same nurse every visit?", a: "Continuity is a core promise. Your parents see the same face every visit, with a scored bench for backup." },
     { q: "What about emergencies?", a: "A single SOS tap dispatches Rescue-1122 and notifies your full Care Circle in seconds." },
     { q: "Can multiple siblings join?", a: "Yes. Add unlimited family members to your Care Circle at no extra cost." },
@@ -254,7 +254,7 @@ function BottomCTA() {
         <div className="rounded-[2rem] bg-ink p-10 text-cream md:p-14 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div>
             <h3 className="font-display font-semibold tracking-tight text-3xl md:text-4xl">Ready to see it live?</h3>
-            <p className="mt-2 text-cream/60">A 20-minute call — no obligation.</p>
+            <p className="mt-2 text-cream/60">A 20-minute call - no obligation.</p>
           </div>
           <div className="flex flex-wrap gap-3">
             <Link to="/contact" className="rounded-full bg-lavender px-6 py-3 text-sm font-bold text-white">Book a call</Link>

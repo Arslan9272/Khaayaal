@@ -8,11 +8,11 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, useState, type ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
+import logo from "../assets/logo-icon.png";
 
 function NotFoundComponent() {
   return (
@@ -41,9 +41,6 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
   return (
     <div className="flex min-h-screen items-center justify-center bg-cream px-4">
       <div className="max-w-md text-center">
@@ -78,14 +75,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Khaayaal — Be present for your parents, from any distance" },
+      { title: "Khaayaal - Be present for your parents, from any distance" },
       {
         name: "description",
         content:
           "Trusted home healthcare for elderly parents in Pakistan, built for diaspora families. Vetted nurses, live GPS tracking, photo-verified visits, and 24/7 SOS.",
       },
       { name: "author", content: "Khaayaal" },
-      { property: "og:title", content: "Khaayaal — Presence knows no distance" },
+      { property: "og:title", content: "Khaayaal - Presence knows no distance" },
       {
         property: "og:description",
         content:
@@ -96,12 +93,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.ico", sizes: "any", type: "image/x-icon" },
+      { rel: "icon", href: "/logo-icon.png", type: "image/png" },
+      { rel: "apple-touch-icon", href: "/logo-icon.png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap",
       },
     ],
   }),
@@ -159,9 +158,7 @@ function SiteNav() {
     <header className="sticky top-0 z-50 border-b border-hairline bg-cream/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 md:h-20 md:px-8">
         <Link to="/" className="flex items-center gap-2">
-          <div className="mj-lav-gradient grid size-8 place-items-center rounded-xl shadow-md shadow-lavender/30">
-            <div className="size-2 rounded-full bg-white animate-pulse" />
-          </div>
+          <img src={logo} alt="Khaayaal" className="size-10 md:size-11 object-contain" />
           <span className="text-lg font-bold tracking-tight md:text-xl">
             Khaayaal
             <span className="ml-1 font-display font-semibold tracking-tight text-ink-muted text-base">
@@ -250,9 +247,7 @@ function SiteFooter() {
         <div className="grid gap-10 md:grid-cols-[2fr_1fr_1fr_1.2fr]">
           <div>
             <Link to="/" className="flex items-center gap-2">
-              <div className="mj-lav-gradient grid size-8 place-items-center rounded-xl shadow-md shadow-lavender/30">
-                <div className="size-2 rounded-full bg-white" />
-              </div>
+              <img src={logo} alt="Khaayaal" className="size-10 object-contain" />
               <span className="text-lg font-bold tracking-tight">
                 Khaayaal
                 <span className="ml-1 font-display font-semibold tracking-tight text-ink-muted text-base">

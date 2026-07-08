@@ -87,7 +87,7 @@ export function HeroPhoneCycle() {
     return () => clearInterval(t);
   }, [paused]);
 
-  // Suppress unused warning — ScreenHero imported for parity but not used here.
+  // Suppress unused warning - ScreenHero imported for parity but not used here.
   void ScreenHero;
 
   return (

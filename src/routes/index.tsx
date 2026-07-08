@@ -25,14 +25,14 @@ import {
 } from "@/components/mojood/phone-screens";
 import { HeroPhoneCycle } from "@/components/mojood/hero-phone-cycle";
 import { MedicineDelivery } from "@/components/mojood/medicine-delivery";
-import { Scene3D } from "@/components/mojood/scene-3d";
+import { AnimatedScene } from "@/components/mojood/animated-scenes";
 import { FeatureCard, StatCard } from "@/components/mojood/shared";
 import { Slider } from "@/components/ui/slider";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Khaayaal — Be present for your parents, from any distance" },
+      { title: "Khaayaal - Be present for your parents, from any distance" },
       {
         name: "description",
         content:
@@ -70,18 +70,17 @@ function Interactive3D() {
         <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
           <div>
             <span className="font-mono text-[10px] font-bold uppercase tracking-[0.25em] text-lavender-deep">
-              Interactive · 3D
+              Live · Animated
             </span>
             <h2 className="mt-3 text-balance text-3xl font-extrabold leading-tight md:text-5xl">
-              Care you can feel —{" "}
+              Care you can watch{" "}
               <span className="font-display font-semibold tracking-tight text-ink-muted">
-                turn it in your hands.
+                happen, as it happens.
               </span>
             </h2>
             <p className="mt-4 max-w-lg text-ink-muted md:text-lg">
-              Every visit, every medicine, every check-in — orbiting a single heartbeat. Drag the
-              scene to explore it from every angle, just like our nurses circle around your parent's
-              care.
+              Every visit, every medicine, every check-in - shown to you the moment it happens,
+              thousands of miles away. The relief of seeing it done, not just hoping it was.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {["Real-time GPS", "Vetted nurses", "Photo proof", "SOS ready"].map((t) => (
@@ -94,7 +93,7 @@ function Interactive3D() {
               ))}
             </div>
           </div>
-          <Scene3D variant="heart" height={460} className="ring-1 ring-hairline shadow-2xl shadow-lavender/20" />
+          <AnimatedScene variant="heart" height={460} className="ring-1 ring-hairline shadow-2xl shadow-lavender/20" />
         </div>
       </div>
     </section>
@@ -110,10 +109,10 @@ function CarePlanner() {
 
   const { tier, price, badge } = useMemo(() => {
     const score = visits[0] * 60 + hours[0] * 35 + meds[0] * 25;
-    if (score < 220) return { tier: "Concierge", price: 149, badge: "Light-touch" };
-    if (score < 450) return { tier: "Assurance", price: 1000, badge: "Regular" };
-    if (score < 700) return { tier: "Guardian", price: 1500, badge: "Daily" };
-    return { tier: "Sanctuary", price: 2000, badge: "Live-in" };
+    if (score < 220) return { tier: "Concierge", price: 300 as number | null, badge: "Light-touch" };
+    if (score < 450) return { tier: "Assurance", price: 350 as number | null, badge: "Regular" };
+    if (score < 700) return { tier: "Guardian", price: 475 as number | null, badge: "Daily" };
+    return { tier: "Sanctuary", price: null as number | null, badge: "Live-in" };
   }, [visits, hours, meds]);
 
   const Row = ({
@@ -169,7 +168,7 @@ function CarePlanner() {
               </span>
             </h2>
             <p className="mt-5 max-w-lg text-base text-ink-muted leading-relaxed">
-              A real estimate in seconds — no forms, no calls. Adjust to your parents'
+              A real estimate in seconds - no forms, no calls. Adjust to your parents'
               needs and see the plan update live.
             </p>
 
@@ -224,8 +223,14 @@ function CarePlanner() {
                   {tier}
                 </p>
                 <div className="mt-6 flex items-baseline gap-2">
-                  <span className="text-5xl font-extrabold tabular-nums">${price}</span>
-                  <span className="text-sm opacity-70">/ month · USD</span>
+                  {price === null ? (
+                    <span className="text-4xl font-extrabold">Contact for quote</span>
+                  ) : (
+                    <>
+                      <span className="text-5xl font-extrabold tabular-nums">${price}</span>
+                      <span className="text-sm opacity-70">/ month · USD</span>
+                    </>
+                  )}
                 </div>
                 <div className="mt-8 h-2 overflow-hidden rounded-full bg-white/15">
                   <div
@@ -381,7 +386,7 @@ function Hero() {
           </span>
         </h1>
         <p className="mj-fade-up mx-auto mt-6 max-w-2xl text-pretty text-base leading-relaxed text-ink-muted md:text-lg">
-          The only home-care service for diaspora children with radical transparency — vetted
+          The only home-care service for diaspora children with radical transparency - vetted
           nurses, live GPS check-ins, and photo-verified visits streamed to your phone in
           London, New York, or Dubai.
         </p>
@@ -532,7 +537,7 @@ function QuickFeatures() {
         </div>
         <div className="mt-16 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           <FeatureCard variant="lavender" icon={<MapPin className="size-5" />} title="Live GPS" body="Every visit logged in real time. See the nurse move on the map." />
-          <FeatureCard variant="peach" icon={<Camera className="size-5" />} title="Photo proof" body="Medicine, vitals, meals — captured and uploaded on every visit." />
+          <FeatureCard variant="peach" icon={<Camera className="size-5" />} title="Photo proof" body="Medicine, vitals, meals - captured and uploaded on every visit." />
           <FeatureCard variant="ink" icon={<Siren className="size-5" />} title="24/7 SOS" body="One tap dispatches Rescue-1122 and pings your whole Care Circle." />
           <FeatureCard variant="mint" icon={<Users className="size-5" />} title="Care Circle" body="Add siblings anywhere. Everyone sees the same updates." />
         </div>
@@ -653,7 +658,7 @@ function TrustCards() {
             variant="peach"
             icon={<Globe className="size-5" />}
             title="Time-zone aware"
-            body="Reports land when you'll actually see them — not at 3am."
+            body="Reports land when you'll actually see them - not at 3am."
           />
         </div>
       </div>
@@ -734,7 +739,7 @@ function Testimonials() {
     { q: "I stopped waking up at 3am. The morning medicine photo IS the product for me.", n: "Hira A.", r: "London · Guardian" },
     { q: "My father won't tell me if he's unwell. Zoya does. That has changed our family.", n: "Omar S.", r: "Dubai · Assurance" },
     { q: "Cheaper than the guilt of not being there. I finally feel present, from Sydney.", n: "Nadia K.", r: "Sydney · Guardian" },
-    { q: "The GPS check-in landing on my Apple Watch during a meeting — that's when I knew this was real.", n: "Faisal M.", r: "New York · Sanctuary" },
+    { q: "The GPS check-in landing on my Apple Watch during a meeting - that's when I knew this was real.", n: "Faisal M.", r: "New York · Sanctuary" },
   ];
   return (
     <section className="py-24 md:py-32">

@@ -1,7 +1,7 @@
 import { PhoneFrame } from "./phone-frame";
 import { MapPin, User, Heart, Pill, Camera, Bell } from "lucide-react";
 
-/* Screen 1 — Booking */
+/* Screen 1 - Booking */
 export function ScreenBook() {
   return (
     <div className="flex h-full w-full flex-col bg-cream p-5">
@@ -43,7 +43,7 @@ export function ScreenBook() {
   );
 }
 
-/* Screen 2 — Live tracking */
+/* Screen 2 - Live tracking */
 export function ScreenTrack() {
   return (
     <div className="flex h-full w-full flex-col bg-cream">
@@ -84,7 +84,7 @@ export function ScreenTrack() {
   );
 }
 
-/* Screen 3 — Report */
+/* Screen 3 - Report */
 export function ScreenReport() {
   return (
     <div className="flex h-full w-full flex-col bg-cream p-5">
@@ -123,7 +123,7 @@ export function ScreenReport() {
   );
 }
 
-/* Screen 4 — Care Circle chat */
+/* Screen 4 - Care Circle chat */
 export function ScreenCircle() {
   return (
     <div className="flex h-full w-full flex-col bg-cream p-5">
@@ -144,7 +144,7 @@ export function ScreenCircle() {
         </div>
         <div className="ml-auto rounded-2xl rounded-tr-none bg-lavender-deep p-3 max-w-[85%]">
           <p className="font-mono text-[8px] text-lavender-soft/80 mb-0.5">Omar · Dubai</p>
-          <p className="text-[10px] leading-snug text-white">Just saw the BP report — she's steady this week 🙏</p>
+          <p className="text-[10px] leading-snug text-white">Just saw the BP report - she's steady this week 🙏</p>
         </div>
         <div className="rounded-2xl rounded-tl-none bg-white p-3 max-w-[85%]">
           <p className="font-mono text-[8px] text-ink-muted mb-0.5">Khaayaal Ops</p>
@@ -225,7 +225,7 @@ export function ScreenHero() {
   );
 }
 
-/* Screen 5 — Meds */
+/* Screen 5 - Meds */
 export function ScreenMeds() {
   return (
     <div className="flex h-full w-full flex-col bg-cream p-5">

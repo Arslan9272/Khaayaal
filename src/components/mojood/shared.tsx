@@ -1,15 +1,15 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
-import { Scene3D, type Scene3DVariant } from "./scene-3d";
+import { AnimatedScene, type SceneVariant } from "./animated-scenes";
 
 export function Scene3DBand({
   variant,
-  eyebrow = "Interactive · 3D",
+  eyebrow = "Live · Animated",
   title,
   body,
   reverse = false,
 }: {
-  variant: Scene3DVariant;
+  variant: SceneVariant;
   eyebrow?: string;
   title: string;
   body: string;
@@ -34,10 +34,10 @@ export function Scene3DBand({
             <p className="mt-4 max-w-lg text-ink-muted md:text-lg">{body}</p>
             <p className="mt-4 inline-flex items-center gap-2 rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-ink ring-1 ring-hairline">
               <span className="size-1.5 rounded-full bg-lavender-deep animate-pulse" />
-              Drag to explore
+              Always in motion
             </p>
           </div>
-          <Scene3D
+          <AnimatedScene
             variant={variant}
             height={420}
             className="ring-1 ring-hairline shadow-2xl shadow-lavender/20"
@@ -229,5 +229,5 @@ export function CTABand({
   primary: { to: string; label: string };
   secondary?: { to: string; label: string };
 }) {
-  return null; /* placeholder — implemented inline where needed to keep Link typed */
+  return null; /* placeholder - implemented inline where needed to keep Link typed */
 }

@@ -66,7 +66,7 @@ export default function Scene3DInner({ variant, interactive, onReady }: Props) {
   );
 }
 
-/* ─────────  SCROLL RIG — rotates + subtly scales the whole scene as the user scrolls  ───────── */
+/* ─────────  SCROLL RIG - rotates + subtly scales the whole scene as the user scrolls  ───────── */
 function ScrollRig({ children }: { children: React.ReactNode }) {
   const group = useRef<THREE.Group>(null);
   const [scroll, setScroll] = useState(0);
@@ -204,7 +204,7 @@ function PillsScene() {
   );
 }
 
-/* ─────────  ROUTE (how-it-works) — moving marker on a torus path  ───────── */
+/* ─────────  ROUTE (how-it-works) - moving marker on a torus path  ───────── */
 function RouteScene() {
   const marker = useRef<THREE.Mesh>(null);
   useFrame(({ clock }) => {
@@ -244,7 +244,7 @@ function RouteScene() {
   );
 }
 
-/* ─────────  COINS (pricing) — stacked tiers  ───────── */
+/* ─────────  COINS (pricing) - stacked tiers  ───────── */
 function CoinsScene() {
   const tiers = [
     { h: -1.2, c: COLORS.cream, s: 1.4 },
@@ -307,7 +307,7 @@ function ShieldScene() {
   );
 }
 
-/* ─────────  GLOBE (contact) — distorted sphere with dots  ───────── */
+/* ─────────  GLOBE (contact) - distorted sphere with dots  ───────── */
 function GlobeScene() {
   const dots = useMemo(() => {
     const pts: [number, number, number][] = [];

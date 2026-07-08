@@ -5,13 +5,13 @@ import { PageHero, FeatureCard, StatCard, Scene3DBand } from "@/components/mojoo
 export const Route = createFileRoute("/trust")({
   head: () => ({
     meta: [
-      { title: "Trust & Safety — Khaayaal safeguards" },
+      { title: "Trust & Safety - Khaayaal safeguards" },
       {
         name: "description",
         content:
           "Every attendant vetted. Every visit logged. Every record tamper-evident. How Khaayaal earns trust by proving it, not claiming it.",
       },
-      { property: "og:title", content: "Trust & Safety — Khaayaal" },
+      { property: "og:title", content: "Trust & Safety - Khaayaal" },
       { property: "og:description", content: "Vetting, insurance, safeguarding, and audit trails you can inspect." },
     ],
   }),
@@ -25,14 +25,14 @@ function TrustPage() {
         eyebrow="Trust & safety"
         title="Every promise is"
         italicTail="proven, not claimed."
-        subtitle="Radical transparency starts on our side too — how we vet, insure, escalate, and safeguard your parents' care."
+        subtitle="Radical transparency starts on our side too - how we vet, insure, escalate, and safeguard your parents' care."
       />
       <StatsRow />
       <Pillars />
       <Scene3DBand
         variant="shield"
-        title="The shield, in three dimensions."
-        body="Background checks, insurance, license verification and SOS — one shield you can turn over in your hands."
+        title="A shield that never sleeps."
+        body="Background checks, insurance, license verification and 24/7 SOS - one protective layer standing guard while your parents rest."
       />
       <VettingProcess />
       <PartnerLogos />
@@ -84,7 +84,7 @@ function Pillars() {
 function VettingProcess() {
   const steps = [
     { n: "01", t: "Application & references", d: "Every candidate submits a full CV plus two clinical references we call and verify." },
-    { n: "02", t: "Background check", d: "NADRA verification, police clearance, and prior-employer checks — all before day one." },
+    { n: "02", t: "Background check", d: "NADRA verification, police clearance, and prior-employer checks - all before day one." },
     { n: "03", t: "Clinical credentialing", d: "PNC (Pakistan Nursing Council) registration verified. Skills matrix scored by our RN lead." },
     { n: "04", t: "Cultural onboarding", d: "Elderly-care ethics, dignity training, and Khaayaal-specific SOPs before any live visit." },
     { n: "05", t: "Live scoring", d: "Every visit rated by family and reviewed. Continuous quality feedback loop." },
@@ -146,7 +146,7 @@ function SafetyPromise() {
     { i: <Camera className="size-5" />, t: "You always see what we see", d: "Every photo, vital, and note pushed to your Care Circle in real time." },
     { i: <Siren className="size-5" />, t: "Emergencies escalate in seconds", d: "SOS taps notify Rescue-1122, on-call clinician, and every family member." },
     { i: <Heart className="size-5" />, t: "Dignity is non-negotiable", d: "Elderly-care ethics training on day one. Any breach is a same-day investigation." },
-    { i: <Users className="size-5" />, t: "You are always the boss", d: "Reject a nurse, pause a plan, change tier — no friction, no negotiation." },
+    { i: <Users className="size-5" />, t: "You are always the boss", d: "Reject a nurse, pause a plan, change tier - no friction, no negotiation." },
   ];
   return (
     <section className="py-24 md:py-32">

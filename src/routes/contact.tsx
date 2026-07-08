@@ -6,7 +6,7 @@ import { PageHero, Scene3DBand } from "@/components/mojood/shared";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact Khaayaal — Book a pilot call" },
+      { title: "Contact Khaayaal - Book a pilot call" },
       {
         name: "description",
         content:
@@ -33,7 +33,7 @@ function Contact() {
       <Scene3DBand
         variant="globe"
         title="From any city, to Lahore."
-        body="Wherever you are — Toronto, Dubai, London, Sydney — one interactive globe connects you to the team on the ground. Give it a spin."
+        body="Wherever you are - Toronto, Dubai, London, Sydney - one steady thread connects you to the team on the ground back home."
         reverse
       />
       <WhatsappBand />
@@ -85,7 +85,7 @@ function ContactGrid() {
                 <Field label="Phone (with country code)" placeholder="+44 7911 123456" />
                 <Select
                   label="Which tier interests you?"
-                  options={["Not sure yet", "Concierge — $149/mo", "Assurance — $1,000/mo", "Guardian — $1,500/mo", "Sanctuary — $2,000/mo"]}
+                  options={["Not sure yet", "Concierge - $300/mo", "Assurance - $350/mo", "Guardian - $475/mo", "Sanctuary - Contact for quote"]}
                 />
                 <div>
                   <label className="mb-1.5 block text-xs font-semibold text-ink">
@@ -126,7 +126,7 @@ function ContactGrid() {
               </div>
               <h3 className="mt-5 text-xl font-bold">Phone / WhatsApp</h3>
               <p className="mt-1 text-ink-muted text-sm">UK, US, and PK numbers.</p>
-              <p className="mt-4 font-display font-semibold tracking-tight text-2xl text-ink">+92 300 111 2233</p>
+              <p className="mt-4 font-display font-semibold tracking-tight text-2xl text-ink">+92 310 6997752</p>
             </div>
 
             <div className="mj-hover-lift rounded-3xl bg-peach-soft p-7 border border-peach/30">
@@ -231,11 +231,11 @@ function WhatsappBand() {
             </div>
             <div>
               <h3 className="font-display font-semibold tracking-tight text-3xl md:text-4xl">Prefer WhatsApp?</h3>
-              <p className="mt-2 text-cream/60">Send us a message — we're on WhatsApp Business.</p>
+              <p className="mt-2 text-cream/60">Send us a message - we're on WhatsApp Business.</p>
             </div>
           </div>
           <a
-            href="https://wa.me/923001112233"
+            href="https://wa.me/923106997752"
             className="rounded-full bg-mint px-6 py-3 text-sm font-bold text-ink inline-flex items-center gap-2 shrink-0"
           >
             Open WhatsApp <ArrowUpRight className="size-4" />

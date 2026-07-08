@@ -20,13 +20,13 @@ import { PageHero, FeatureCard, Scene3DBand } from "@/components/mojood/shared";
 export const Route = createFileRoute("/features")({
   head: () => ({
     meta: [
-      { title: "Features — Khaayaal transparency engine" },
+      { title: "Features - Khaayaal transparency engine" },
       {
         name: "description",
         content:
           "Live GPS, photo proof, Care Circle, errands wallet, SOS, medicine tracking, and more. Every feature designed for diaspora peace of mind.",
       },
-      { property: "og:title", content: "Features — Khaayaal" },
+      { property: "og:title", content: "Features - Khaayaal" },
       { property: "og:description", content: "Every feature that turns anxiety into presence." },
     ],
   }),
@@ -40,13 +40,12 @@ function FeaturesPage() {
         eyebrow="The transparency engine"
         title="Everything you need."
         italicTail="Nothing they don't."
-        subtitle="An ecosystem designed for the specific anxieties of long-distance eldercare — from the first booking to the daily pulse that lands on your phone."
+        subtitle="An ecosystem designed for the specific anxieties of long-distance eldercare - from the first booking to the daily pulse that lands on your phone."
       />
       <Scene3DBand
         variant="pills"
-        eyebrow="Interactive · 3D"
         title="A living medicine cabinet."
-        body="Every prescription, refill and reminder — orbiting your parent's daily rhythm. Drag to rotate the shelf."
+        body="Every prescription, refill and reminder - tracked around your parent's daily rhythm, so nothing is ever missed."
       />
       <BentoOne />
       <CategoryStrip />
@@ -67,7 +66,7 @@ function BentoOne() {
             big
             icon={<MapPin className="size-5" />}
             title="Geofenced GPS check-ins"
-            body="Every visit is verified against your parents' address. You'll know exactly when our staff enters, works, and leaves — no manual logs, only truth."
+            body="Every visit is verified against your parents' address. You'll know exactly when our staff enters, works, and leaves - no manual logs, only truth."
           >
             <div className="relative mt-8 h-56 overflow-hidden rounded-2xl bg-lavender-soft">
               <div
@@ -157,8 +156,8 @@ function BentoTwo() {
         </div>
         <div className="mt-16 grid gap-4 md:grid-cols-3">
           <FeatureCard icon={<Pill className="size-5" />} title="Medicine tracking" body="Schedules, photo confirmation, missed-dose escalation, refill nudges." />
-          <FeatureCard icon={<Heart className="size-5" />} title="Vitals & wellness" body="BP, sugar, pulse, weight, sleep — trended weekly with alerts on anomalies." />
-          <FeatureCard icon={<ClipboardList className="size-5" />} title="Care plans" body="Doctor-led plans encoded into daily task lists — nothing forgotten." />
+          <FeatureCard icon={<Heart className="size-5" />} title="Vitals & wellness" body="BP, sugar, pulse, weight, sleep - trended weekly with alerts on anomalies." />
+          <FeatureCard icon={<ClipboardList className="size-5" />} title="Care plans" body="Doctor-led plans encoded into daily task lists - nothing forgotten." />
           <FeatureCard icon={<Bell className="size-5" />} title="Smart reminders" body="Family and nurse notifications tuned to your time zone, not theirs." />
           <FeatureCard icon={<FileText className="size-5" />} title="Tamper-evident log" body="Append-only, hash-chained audit trail. Records can never be silently edited." />
           <FeatureCard icon={<ShieldCheck className="size-5" />} title="Vetted, insured" body="Background checks, clinical creds, $1M liability cover on every visit." />
@@ -211,21 +210,21 @@ function ComparisonTable() {
                 {r.m ? (
                   <span className="inline-grid size-7 place-items-center rounded-full bg-lavender-deep text-white">✓</span>
                 ) : (
-                  <span className="text-ink-muted">—</span>
+                  <span className="text-ink-muted">-</span>
                 )}
               </span>
               <span className="text-center">
                 {r.a ? (
                   <span className="inline-grid size-7 place-items-center rounded-full bg-mint/50 text-emerald-800">✓</span>
                 ) : (
-                  <span className="text-ink-muted">—</span>
+                  <span className="text-ink-muted">-</span>
                 )}
               </span>
               <span className="text-center">
                 {r.i ? (
                   <span className="inline-grid size-7 place-items-center rounded-full bg-mint/50 text-emerald-800">✓</span>
                 ) : (
-                  <span className="text-ink-muted">—</span>
+                  <span className="text-ink-muted">-</span>
                 )}
               </span>
             </div>
